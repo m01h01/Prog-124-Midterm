@@ -1,0 +1,25 @@
+﻿<Window x:Class="Prog_124_Midterm.MemeberInformation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prog_124_Midterm"
+        mc:Ignorable="d"
+        Title="MemeberInformation" Height="450" Width="800">
+    <Canvas Background="#FF413757">
+        <Label Content="First Name:" Canvas.Left="11" Canvas.Top="13" FontWeight="Bold" FontSize="16" Foreground="#FFE7E6E6" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbFname" Canvas.Left="118" TextWrapping="Wrap" Canvas.Top="13" Width="144" HorizontalAlignment="Left" VerticalAlignment="Center" Height="38"/>
+        <Label Content="Last Name:" Canvas.Left="11" Canvas.Top="72" FontWeight="Bold" FontSize="16" Foreground="#FFE7E6E6" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbLname" Canvas.Left="118" TextWrapping="Wrap" Canvas.Top="72" Width="144" Height="38" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <GroupBox Height="151" Header="Membership Type" Width="252" Canvas.Left="10" Canvas.Top="140" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" VerticalContentAlignment="Bottom" FontSize="16">
+            <StackPanel Margin="2,0,-2,0" Height="68">
+                <RadioButton x:Name="RbRegularMember" Content="Regular Member" Foreground="White" FontSize="20"/>
+                <RadioButton x:Name="RbGoldMember" Content="Gold Member" d:LayoutOverrides="Width, Height" Foreground="White" FontSize="20"/>
+            </StackPanel>
+        </GroupBox>
+        <Button x:Name="tbAddMember" Content="Add Member" Canvas.Left="58" Canvas.Top="326" HorizontalAlignment="Center" VerticalAlignment="Top" Width="162" Height="45" Click="tbAddMember_Click"/>
+        <ListBox x:Name="lbMemberInfo" Height="370" Width="250" d:ItemsSource="{d:SampleData ItemCount=5}" Canvas.Left="281" Canvas.Top="29" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="lbMemberInfo_SelectionChanged"/>
+        <ListBox x:Name="lbTransHistory" Height="309" Width="223" d:ItemsSource="{d:SampleData ItemCount=5}" Canvas.Left="548" Canvas.Top="90" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label Content="Transaction History" Canvas.Left="579" Canvas.Top="44" HorizontalAlignment="Center" VerticalAlignment="Top" Width="161" Foreground="White" FontWeight="Bold" FontSize="15" Height="47"/>
+    </Canvas>
+</Window>
