@@ -15,13 +15,12 @@ namespace Prog_124_Midterm
 
         public override void AddPoints(Product product)
         {
-            PointsAmount += Product.Points + 50;
-           
+            PointsAmount += product.Points + 50;
         }
 
         public override void DeductPoints(Product product)
         {
-            PointsAmount -= Product.Points / 2;
+            PointsAmount -= product.Points / 2;
            
         }
         public override string ToString()

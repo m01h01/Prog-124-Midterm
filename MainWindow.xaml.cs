@@ -22,13 +22,15 @@ namespace Prog_124_Midterm
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Name: Monika Heang
+        //Date: 05/08/2023
+        //Assignment: Prog 124 Midterm
         public MainWindow()
         {
             InitializeComponent();
             lbCollectionOfProducts.ItemsSource = Data.Products;
             cbMemberInfo.ItemsSource = Data.Members;
             cbMemberInfo.SelectedIndex = 0;
-          
 
         }
         private void btnAddNewProduct_Click_1(object sender, RoutedEventArgs e)
@@ -49,15 +51,14 @@ namespace Prog_124_Midterm
             
         }
         private void cbMemeberInfo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-           
+        {  
             // make selection change in the combo box of member, then store it as CurrentMember
             int selected = cbMemberInfo.SelectedIndex;
             Data.CurrentMember = Data.Members[selected];
 
-            Data.UpdateCurrentMember(Data.CurrentMember);
-            lbCurrentTransaction.ItemsSource = Member.PreviousTransation;
-            LabelPointsCount.Content = Member.PointsAmount;
+            ////right here, i am thinking of doing something like Data.Current.PreviousTransation since we are pulling information of the selected Index. But It doesn't let me to.
+            lbCurrentTransaction.ItemsSource =Data.CurrentMember.PreviousTransation;
+            LabelPointsCount.Content = Data.CurrentMember.PointsAmount;
 
         }
        
@@ -69,15 +70,17 @@ namespace Prog_124_Midterm
             //adding points of the selected member to the total points
             Data.CurrentMember.AddPoints(Data.CurrentProduct);
 
-            lbCurrentTransaction.ItemsSource = Member.PreviousTransation;
-            LabelPointsCount.Content = Member.PointsAmount.ToString();
+            lbCurrentTransaction.ItemsSource =Data.CurrentMember.PreviousTransation;
+            LabelPointsCount.Content = Data.CurrentMember.PointsAmount;
+
+            cbMemberInfo.Items.Refresh();
 
         }
 
         private void btnUsePoint_Click(object sender, RoutedEventArgs e)
         {
             Data.CurrentMember.DeductPoints(Data.CurrentProduct);
-            LabelPointsCount.Content = Member.PointsAmount.ToString();
+            LabelPointsCount.Content = Data.CurrentMember.PointsAmount;
         }
     }//namespace
 }//class

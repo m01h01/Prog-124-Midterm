@@ -12,9 +12,9 @@ namespace Prog_124_Midterm
         string _firstName;
         string _lastName;
         int _memberNumber;
-        static int _pointsAmount;
+        int _pointsAmount;
         DateTime _memberSince;
-        public static ObservableCollection<Product> _previousTransation;
+        public ObservableCollection<Product> _previousTransation;
 
         protected Member(string firstName, string lastName)
         {
@@ -27,8 +27,9 @@ namespace Prog_124_Midterm
             _memberSince = DateTime.Now;
             _previousTransation = new ObservableCollection<Product>();
         }
-        public static ObservableCollection<Product> PreviousTransation { get => _previousTransation; set => _previousTransation = value; }
-        public static int PointsAmount { get => _pointsAmount; set => _pointsAmount = value; }
+
+        public ObservableCollection<Product> PreviousTransation { get => _previousTransation;}
+        public int PointsAmount { get => _pointsAmount; set => _pointsAmount = value; }
 
         public abstract void DeductPoints(Product product);
         public abstract void AddPoints(Product product);
@@ -38,7 +39,7 @@ namespace Prog_124_Midterm
         }
         public override string ToString()
         {
-            return $"{GetType().Name} - {_memberNumber} - {_firstName} {_lastName} - Current Point(s): {PointsAmount}"; 
+            return $"{GetType().Name} - {_memberNumber} - {_firstName} {_lastName} -Reward Point(s): {PointsAmount}, Member since: {_memberSince.ToShortDateString()}"; 
 
 
         }

@@ -46,90 +46,263 @@ namespace Prog_124_Midterm
         private void btnAddCoffee_Click(object sender, RoutedEventArgs e)
         {
             string name = tbName.Text;
-            double price = double.Parse(tbPrice.Text);
-            int points = int.Parse(tbPoints.Text);
-
-            Coffee.drinksize size = (Coffee.drinksize)cbSize.SelectedIndex;
             string roastOrtea = tbRoastOrTea.Text;
+            bool isNameNotEmpty = name != "";
+            bool isRoastOrTeatNotEmpty = roastOrtea != "";
 
-            Coffee coffee = new Coffee(name, price, points, size, roastOrtea);
+            double price = 0;
+            bool isPrice = double.TryParse(tbPrice.Text, out price);
 
-            Data.AddProductToCollection(coffee);
-            Clear();
+            int points = int.Parse(tbPoints.Text);
+            bool isPoints = int.TryParse(tbPrice.Text, out points);
+
+            if (isNameNotEmpty)
+            {
+                if (isPrice && isPoints)
+                {
+                    if (isRoastOrTeatNotEmpty)
+                    {
+                        Coffee.drinksize size = (Coffee.drinksize)cbSize.SelectedIndex;
+
+                        Coffee coffee = new Coffee(name, price, points, size, roastOrtea);
+
+                        Data.AddProductToCollection(coffee);
+
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter type of Roast");
+                    }
+                }
+                else 
+                {
+                    MessageBox.Show("Please enter number only for Price and Points");
+                }
+            }
+            else 
+            {
+                MessageBox.Show("Please enter Name");
+            }
         }
 
         private void btnAddTea_Click(object sender, RoutedEventArgs e)
         {
             string name = tbName.Text;
-            double price = double.Parse(tbPrice.Text);
-            int points = int.Parse(tbPoints.Text);
-
-            Tea.drinksize size = (Tea.drinksize)cbSize.SelectedIndex;
             string roastOrtea = tbRoastOrTea.Text;
+            bool isNameNotEmpty = name != "";
+            bool isRoastOrTeatNotEmpty = roastOrtea != "";
 
-            Data.AddProductToCollection(new Tea(name, price, points, size , roastOrtea));
-            Clear();
+            double price = 0;
+            bool isPrice = double.TryParse(tbPrice.Text, out price);
+
+            int points = int.Parse(tbPoints.Text);
+            bool isPoints = int.TryParse(tbPrice.Text, out points);
+
+            if (isNameNotEmpty)
+            {
+                if (isPrice && isPoints)
+                {
+                    if (isRoastOrTeatNotEmpty)
+                    {
+                        Tea.drinksize size = (Tea.drinksize)cbSize.SelectedIndex;
+                        
+                        Data.AddProductToCollection(new Tea(name, price, points, size, roastOrtea));
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter type of Tea");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter number only for Price and Points");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter Name");
+            }
         }
 
         private void btnBreakfast_Click(object sender, RoutedEventArgs e)
         {
             string name = tbName.Text;
-            double price = double.Parse(tbPrice.Text);
+            bool isNameNotEmpty = name != "";
+            double price = 0;
+            bool isPrice = double.TryParse(tbPrice.Text, out price);
+
             int points = int.Parse(tbPoints.Text);
+            bool isPoints = int.TryParse(tbPrice.Text, out points);
 
             bool isHeated = cbIsHeated.IsChecked.Value;
             bool hasDiary = cbHasDiaryOrCombo.IsChecked.Value;
 
-            Data.AddProductToCollection(new Breakfast(name, price, points, isHeated, hasDiary));
-            Clear();
+            if (isNameNotEmpty)
+            {
+                if (isPrice && isPoints)
+                {
+                    Data.AddProductToCollection(new Breakfast(name, price, points, isHeated, hasDiary));
+                    Clear();
+                }
+                else
+                { 
+                    MessageBox.Show("Please enter number only for Price and Points"); 
+                }
+            }
+            else 
+            {
+                MessageBox.Show("Please enter Name");
+            }
         }
-
         private void btnLunch_Click(object sender, RoutedEventArgs e)
         {
             string name = tbName.Text;
-            double price = double.Parse(tbPrice.Text);
+            bool isNameNotEmpty = name != "";
+
+            double price = 0;
+            bool isPrice = double.TryParse(tbPrice.Text, out price);
+
             int points = int.Parse(tbPoints.Text);
+            bool isPoints = int.TryParse(tbPrice.Text, out points);
 
             bool isHeated = cbIsHeated.IsChecked.Value;
-            bool isCombo = cbHasDiaryOrCombo.IsChecked.Value;
+            bool hasDiary = cbHasDiaryOrCombo.IsChecked.Value;
 
-            Data.AddProductToCollection(new Lunch(name, price, points, isHeated, isCombo));
-            Clear();
-
+            if (isNameNotEmpty)
+            {
+                if (isPrice && isPoints)
+                {
+                    Data.AddProductToCollection(new Lunch(name, price, points, isHeated, hasDiary));
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter number only for Price and Points");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter Name");
+            }
         }
 
         private void btnTumbler_Click(object sender, RoutedEventArgs e)
         {
             string name = tbName.Text;
-            double price = double.Parse(tbPrice.Text);
+            bool isNameNotEmpty = name != "";
+
+            double price = 0;
+            bool isPrice = double.TryParse(tbPrice.Text, out price);
+
             int points = int.Parse(tbPoints.Text);
+            bool isPoints = int.TryParse(tbPrice.Text, out points);
+
             string color = tbColorOrStyle.Text;
+            bool isColor = color != "";
 
-            Data.AddProductToCollection(new Tumblurs(name, price, points, color));
-            Clear();
-
+            if (isNameNotEmpty)
+            {
+                if (isPrice && isPoints)
+                {
+                    if (isColor)
+                    {
+                        Data.AddProductToCollection(new Tumblurs(name, price, points, color));
+                        Clear();
+                    }
+                    else 
+                    {
+                        MessageBox.Show("Please choose Color for Tumblur");
+                    }
+                }
+                else 
+                {
+                    MessageBox.Show("Please enter number only for Price and Points");
+                }
+            }
+            else 
+            {
+                MessageBox.Show("Please enter Name");
+            }
         }
 
         private void btnMug_Click(object sender, RoutedEventArgs e)
         {
             string name = tbName.Text;
-            double price = double.Parse(tbPrice.Text);
-            int points = int.Parse(tbPoints.Text);
-            string style = tbColorOrStyle.Text;
+            bool isNameNotEmpty = name != "";
 
-            Data.AddProductToCollection(new Mug(name, price, points, style));
-            Clear();
+            double price = 0;
+            bool isPrice = double.TryParse(tbPrice.Text, out price);
+
+            int points = int.Parse(tbPoints.Text);
+            bool isPoints = int.TryParse(tbPrice.Text, out points);
+
+            string style = tbColorOrStyle.Text;
+            bool isStyle = style != "";
+
+            if (isNameNotEmpty)
+            {
+                if (isPrice && isPoints)
+                {
+                    if (isStyle)
+                    {
+                        Data.AddProductToCollection(new Mug(name, price, points, style));
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please choose Style for Mug");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter number only for Price and Points");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter Name");
+            }
         }
 
         private void btnGiftCard_Click(object sender, RoutedEventArgs e)
         {
             string name = tbName.Text;
-            double price = double.Parse(tbPrice.Text);
-            int points = int.Parse(tbPoints.Text);
-            int amount = int.Parse(tbGiftCard.Text);
+            bool isNameNotEmpty = name != "";
 
-            Data.AddProductToCollection(new GiftCard(name, price, points, amount));
-            Clear();
+            double price = 0;
+            bool isPrice = double.TryParse(tbPrice.Text, out price);
+
+            int points = int.Parse(tbPoints.Text);
+            bool isPoints = int.TryParse(tbPrice.Text, out points);
+
+            int amount = 0;
+            bool isAmount = int.TryParse(tbGiftCard.Text, out amount);
+
+            if (isNameNotEmpty)
+            {
+                if (isPrice && isPoints)
+                {
+                    if (isAmount)
+                    {
+                        Data.AddProductToCollection(new GiftCard(name, price, points, amount));
+                        Clear();
+                    }
+                    else 
+                    {
+                        MessageBox.Show("Please enter number only for Amount");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter number only for Price and Points");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter Name");
+            }
         }
-    }
-}
+    }//class
+}//namespace

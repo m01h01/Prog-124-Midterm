@@ -20,6 +20,7 @@ namespace Prog_124_Midterm
             _products = new ObservableCollection<Product>();
            
         }
+
         public static ObservableCollection<Member> Members { get => _members; }
         public static Product CurrentProduct { get => currentProduct; set => currentProduct = value; }
         public static Member CurrentMember { get => currentMember; set => currentMember = value; }
@@ -29,20 +30,10 @@ namespace Prog_124_Midterm
         {
             _members.Add(member);
         }
+
         public static void AddProductToCollection(Product product)
         {
             _products.Add(product);
-        }
-
-        //And could I ask when should I use these two data class method?
-        public static void UpdateCurrentProduct(Product product)
-        {
-            product = currentProduct;
-        }
-        public static void UpdateCurrentMember(Member member)
-        {
-            member = currentMember;
-           
         }
 
     }
