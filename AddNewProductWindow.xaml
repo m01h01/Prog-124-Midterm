@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prog_124_Midterm"
         mc:Ignorable="d"
-        Title="AddNewProductWindow" Height="450" Width="800">
+        Title="Add Products" Height="450" Width="800">
     <Canvas Background="#FFBA7FE4">
         <Label Content="Name" Canvas.Left="9" Canvas.Top="11" HorizontalAlignment="Center" VerticalAlignment="Top" Width="72" Height="25" FontSize="14"/>
         <TextBox x:Name="tbName" Canvas.Left="68" TextWrapping="Wrap" Canvas.Top="14" Width="187" HorizontalAlignment="Center" VerticalAlignment="Top" Height="19"/>

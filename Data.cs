@@ -26,11 +26,13 @@ namespace Prog_124_Midterm
         public static Member CurrentMember { get => currentMember; set => currentMember = value; }
         public static ObservableCollection<Product> Products { get => _products; }
         
+        //add member to the data class
         public static void AddMemberToCollection(Member member)
         {
             _members.Add(member);
         }
 
+        //add product to the data class
         public static void AddProductToCollection(Product product)
         {
             _products.Add(product);

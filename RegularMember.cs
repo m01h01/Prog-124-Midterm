@@ -11,7 +11,6 @@ namespace Prog_124_Midterm
         public RegularMember(string firstName, string lastName) : base(firstName, lastName)
         {
         }
-
        
         public override void AddPoints(Product product)
         {

@@ -43,6 +43,9 @@ namespace Prog_124_Midterm
             tbRoastOrTea.Text = "";
             tbGiftCard.Text = "";
         }
+
+        //when click the button, get the info from all the text boxes and check boxes base on the needed fields related to each class
+        //conditions are made
         private void btnAddCoffee_Click(object sender, RoutedEventArgs e)
         {
             string name = tbName.Text;
@@ -54,7 +57,7 @@ namespace Prog_124_Midterm
             bool isPrice = double.TryParse(tbPrice.Text, out price);
 
             int points = int.Parse(tbPoints.Text);
-            bool isPoints = int.TryParse(tbPrice.Text, out points);
+            bool isPoints = int.TryParse(tbPoints.Text, out points);
 
             if (isNameNotEmpty)
             {
@@ -84,7 +87,7 @@ namespace Prog_124_Midterm
             {
                 MessageBox.Show("Please enter Name");
             }
-        }
+        }//button add coffee
 
         private void btnAddTea_Click(object sender, RoutedEventArgs e)
         {
@@ -97,7 +100,7 @@ namespace Prog_124_Midterm
             bool isPrice = double.TryParse(tbPrice.Text, out price);
 
             int points = int.Parse(tbPoints.Text);
-            bool isPoints = int.TryParse(tbPrice.Text, out points);
+            bool isPoints = int.TryParse(tbPoints.Text, out points);
 
             if (isNameNotEmpty)
             {
@@ -124,7 +127,7 @@ namespace Prog_124_Midterm
             {
                 MessageBox.Show("Please enter Name");
             }
-        }
+        }//button add tea
 
         private void btnBreakfast_Click(object sender, RoutedEventArgs e)
         {
@@ -134,7 +137,7 @@ namespace Prog_124_Midterm
             bool isPrice = double.TryParse(tbPrice.Text, out price);
 
             int points = int.Parse(tbPoints.Text);
-            bool isPoints = int.TryParse(tbPrice.Text, out points);
+            bool isPoints = int.TryParse(tbPoints.Text, out points);
 
             bool isHeated = cbIsHeated.IsChecked.Value;
             bool hasDiary = cbHasDiaryOrCombo.IsChecked.Value;
@@ -155,7 +158,8 @@ namespace Prog_124_Midterm
             {
                 MessageBox.Show("Please enter Name");
             }
-        }
+        }//button add breakfast
+
         private void btnLunch_Click(object sender, RoutedEventArgs e)
         {
             string name = tbName.Text;
@@ -165,7 +169,7 @@ namespace Prog_124_Midterm
             bool isPrice = double.TryParse(tbPrice.Text, out price);
 
             int points = int.Parse(tbPoints.Text);
-            bool isPoints = int.TryParse(tbPrice.Text, out points);
+            bool isPoints = int.TryParse(tbPoints.Text, out points);
 
             bool isHeated = cbIsHeated.IsChecked.Value;
             bool hasDiary = cbHasDiaryOrCombo.IsChecked.Value;
@@ -186,7 +190,7 @@ namespace Prog_124_Midterm
             {
                 MessageBox.Show("Please enter Name");
             }
-        }
+        }//button add lunch
 
         private void btnTumbler_Click(object sender, RoutedEventArgs e)
         {
@@ -197,7 +201,7 @@ namespace Prog_124_Midterm
             bool isPrice = double.TryParse(tbPrice.Text, out price);
 
             int points = int.Parse(tbPoints.Text);
-            bool isPoints = int.TryParse(tbPrice.Text, out points);
+            bool isPoints = int.TryParse(tbPoints.Text, out points);
 
             string color = tbColorOrStyle.Text;
             bool isColor = color != "";
@@ -225,7 +229,7 @@ namespace Prog_124_Midterm
             {
                 MessageBox.Show("Please enter Name");
             }
-        }
+        }//button add tumbler
 
         private void btnMug_Click(object sender, RoutedEventArgs e)
         {
@@ -236,7 +240,7 @@ namespace Prog_124_Midterm
             bool isPrice = double.TryParse(tbPrice.Text, out price);
 
             int points = int.Parse(tbPoints.Text);
-            bool isPoints = int.TryParse(tbPrice.Text, out points);
+            bool isPoints = int.TryParse(tbPoints.Text, out points);
 
             string style = tbColorOrStyle.Text;
             bool isStyle = style != "";
@@ -264,7 +268,7 @@ namespace Prog_124_Midterm
             {
                 MessageBox.Show("Please enter Name");
             }
-        }
+        }//button add Mug
 
         private void btnGiftCard_Click(object sender, RoutedEventArgs e)
         {
@@ -275,7 +279,7 @@ namespace Prog_124_Midterm
             bool isPrice = double.TryParse(tbPrice.Text, out price);
 
             int points = int.Parse(tbPoints.Text);
-            bool isPoints = int.TryParse(tbPrice.Text, out points);
+            bool isPoints = int.TryParse(tbPoints.Text, out points);
 
             int amount = 0;
             bool isAmount = int.TryParse(tbGiftCard.Text, out amount);
@@ -303,6 +307,6 @@ namespace Prog_124_Midterm
             {
                 MessageBox.Show("Please enter Name");
             }
-        }
+        }//button add gift card
     }//class
 }//namespace

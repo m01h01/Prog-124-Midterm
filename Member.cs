@@ -39,9 +39,7 @@ namespace Prog_124_Midterm
         }
         public override string ToString()
         {
-            return $"{GetType().Name} - {_memberNumber} - {_firstName} {_lastName} -Reward Point(s): {PointsAmount}, Member since: {_memberSince.ToShortDateString()}"; 
-
-
+            return $"{GetType().Name} - {_memberNumber} - {_firstName} {_lastName} -Reward Point(s): {PointsAmount}, Member since: {_memberSince.ToShortDateString()},"; 
         }
 
 

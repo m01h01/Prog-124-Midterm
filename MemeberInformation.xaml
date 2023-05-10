@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prog_124_Midterm"
         mc:Ignorable="d"
-        Title="MemeberInformation" Height="450" Width="800">
+        Title="Add Member" Height="450" Width="800">
     <Canvas Background="#FF413757">
         <Label Content="First Name:" Canvas.Left="11" Canvas.Top="13" FontWeight="Bold" FontSize="16" Foreground="#FFE7E6E6" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <TextBox x:Name="tbFname" Canvas.Left="118" TextWrapping="Wrap" Canvas.Top="13" Width="144" HorizontalAlignment="Left" VerticalAlignment="Center" Height="38"/>

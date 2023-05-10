@@ -12,11 +12,11 @@
         <Button x:Name="btnAddNewProduct" Content="Add New Product" Canvas.Left="107" Canvas.Top="382" HorizontalAlignment="Left" VerticalAlignment="Center" Width="171" Click="btnAddNewProduct_Click_1" Height="26"/>
         <Button x:Name="btnUsePoint" Content="Use Pionts" Canvas.Left="508" Canvas.Top="382" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="3.867,0.524" Width="118" Height="26" Click="btnUsePoint_Click"/>
         <Button x:Name="btnBuyProduct" Content="Buy Product" Canvas.Left="394" Canvas.Top="382" HorizontalAlignment="Center" VerticalAlignment="Top" Width="96" Height="26" Click="btnBuyProduct_Click"/>
-        <ComboBox x:Name="cbMemberInfo" Canvas.Left="390" Canvas.Top="42" Width="243" HorizontalAlignment="Left" VerticalAlignment="Center" Height="67" SelectionChanged="cbMemeberInfo_SelectionChanged"/>
-        <Button x:Name="btnMemberInformation" Content="Memebr&#xD;&#xA;Information" Canvas.Left="638" Canvas.Top="54" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Height="44" Click="btnMemberInformation_Click"/>
-        <ListBox x:Name="lbCurrentTransaction" Height="253" Width="386" d:ItemsSource="{d:SampleData ItemCount=5}" Canvas.Left="390" Canvas.Top="117" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Label Content="User Points:" Canvas.Left="626" Canvas.Top="385"/>
-        <Label x:Name="LabelPointsCount" Content="" Canvas.Left="698" Canvas.Top="385" HorizontalAlignment="Left" VerticalAlignment="Top" Width="71" Background="#FFFAF7F7"/>
+        <ComboBox x:Name="cbMemberInfo" Canvas.Left="390" Canvas.Top="42" Width="243" HorizontalAlignment="Center" VerticalAlignment="Top" Height="45" SelectionChanged="cbMemeberInfo_SelectionChanged"/>
+        <Button x:Name="btnMemberInformation" Content="Memebr&#xD;&#xA;Information" Canvas.Left="638" Canvas.Top="42" HorizontalAlignment="Left" VerticalAlignment="Center" Width="123" Height="44" Click="btnMemberInformation_Click"/>
+        <ListBox x:Name="lbCurrentTransaction" Height="253" Width="386" d:ItemsSource="{d:SampleData ItemCount=5}" Canvas.Left="383" Canvas.Top="107" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Content="User Points:" Canvas.Left="626" Canvas.Top="382" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label x:Name="LabelPointsCount" Content="" Canvas.Left="698" Canvas.Top="382" HorizontalAlignment="Center" VerticalAlignment="Top" Width="71" Background="#FFFAF7F7"/>
 
     </Canvas>
 </Window>

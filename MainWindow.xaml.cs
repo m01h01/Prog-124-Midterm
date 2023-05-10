@@ -23,14 +23,17 @@ namespace Prog_124_Midterm
     public partial class MainWindow : Window
     {
         //Name: Monika Heang
-        //Date: 05/08/2023
+        //Date: 05/09/2023
         //Assignment: Prog 124 Midterm
         public MainWindow()
         {
             InitializeComponent();
             lbCollectionOfProducts.ItemsSource = Data.Products;
             cbMemberInfo.ItemsSource = Data.Members;
+
+            //always make sure listbox and combobox is selected
             cbMemberInfo.SelectedIndex = 0;
+            lbCollectionOfProducts.SelectedIndex = 0;
 
         }
         private void btnAddNewProduct_Click_1(object sender, RoutedEventArgs e)
@@ -45,42 +48,58 @@ namespace Prog_124_Midterm
 
         private void lbCollectionOfProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-          //make selection change in the listbox of product, then store it as CurrentProduct
+            //make selection change in the listbox of product, then store it as CurrentProduct
             int selectedIndex = lbCollectionOfProducts.SelectedIndex;
             Data.CurrentProduct = Data.Products[selectedIndex];
-            
+
         }
         private void cbMemeberInfo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {  
+        {
             // make selection change in the combo box of member, then store it as CurrentMember
             int selected = cbMemberInfo.SelectedIndex;
             Data.CurrentMember = Data.Members[selected];
 
-            ////right here, i am thinking of doing something like Data.Current.PreviousTransation since we are pulling information of the selected Index. But It doesn't let me to.
-            lbCurrentTransaction.ItemsSource =Data.CurrentMember.PreviousTransation;
+            //when combo box selection change, the previous transaction of current member
+            //appear on the listbox
+            lbCurrentTransaction.ItemsSource = Data.CurrentMember.PreviousTransation;
+
+            //also make the point amount of current member appear on the label
             LabelPointsCount.Content = Data.CurrentMember.PointsAmount;
 
         }
-       
+
         private void btnBuyProduct_Click(object sender, RoutedEventArgs e)
         {
             //add product of the selected member to the prior purchases
             Data.CurrentMember.AddProduct(Data.CurrentProduct);
 
-            //adding points of the selected member to the total points
+            //adding points of selected product to the point amount of current member
             Data.CurrentMember.AddPoints(Data.CurrentProduct);
 
-            lbCurrentTransaction.ItemsSource =Data.CurrentMember.PreviousTransation;
+            //the transaction that belong to the current member appears on the listbox
+            lbCurrentTransaction.ItemsSource = Data.CurrentMember.PreviousTransation;
+
             LabelPointsCount.Content = Data.CurrentMember.PointsAmount;
 
+            lbCurrentTransaction.Items.Refresh();
             cbMemberInfo.Items.Refresh();
 
         }
 
         private void btnUsePoint_Click(object sender, RoutedEventArgs e)
         {
+            //add product of the selected member to the prior purchases
+            Data.CurrentMember.AddProduct(Data.CurrentProduct);
+
+            //deduct points of product from the CurrentMemebr's point amount
             Data.CurrentMember.DeductPoints(Data.CurrentProduct);
+
+            lbCurrentTransaction.ItemsSource = Data.CurrentMember.PreviousTransation;
+
             LabelPointsCount.Content = Data.CurrentMember.PointsAmount;
+
+            lbCurrentTransaction.Items.Refresh();
+            cbMemberInfo.Items.Refresh();
         }
     }//namespace
 }//class

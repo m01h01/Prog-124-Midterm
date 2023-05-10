@@ -29,6 +29,9 @@ namespace Prog_124_Midterm
 
         private void tbAddMember_Click(object sender, RoutedEventArgs e)
         {
+            //get the info from all the text boxes and radio button
+            //conditions are made
+
             bool isRegularMember = RbRegularMember.IsChecked.Value;
             bool isGoldMember = RbGoldMember.IsChecked.Value;
 
@@ -58,10 +61,13 @@ namespace Prog_124_Midterm
         }
         private void lbMemberInfo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //save selected index as the current member
             int selectedIndex = lbMemberInfo.SelectedIndex;
             Data.CurrentMember = Data.Members[selectedIndex];
 
+            //the transaction of the current member shows on the listbox
             lbTransHistory.ItemsSource = Data.CurrentMember.PreviousTransation;
+
             lbTransHistory.Items.Refresh();
            
         }
